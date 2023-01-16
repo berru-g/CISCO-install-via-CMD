@@ -1,4 +1,4 @@
-## Commandes de base utiles pour un technicien help desk :
+## Commandes de base utiles :
 
 ### Sous Win, Linux donc powershell:
 
@@ -75,7 +75,7 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
 
 ## Réseaux (notes)
 
-    create partition primary size=2048`
+    cisco packet tracer
 
 ### Les réseaux sous WIN 10
 
@@ -108,35 +108,34 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
     netsh interface ipv4 set address name=6 dhcp
 
 
-###  Voir ses ID et son réseaux
+####  Voir ses ID et son réseaux
 	ipconfig
 
-### Voir les IP sur son wifi
+#### Voir les IP sur son wifi
 	arp -a
 
-### Envoie un mess sur un PC de son réseaux
+#### Envoie un mess sur un PC de son réseaux
 	msg */server:192.168.1.19 tu_recoit_ce_message
 
-##### Server adress
+#### Server adress
 	nslookup
 
-##### Permet tout d'abord de connaître l'état des ports et des connexions sur votre machine. (fermer tte fenetre sur son pc)
+#### Permet tout d'abord de connaître l'état des ports et des connexions sur votre machine. (fermer tte fenetre sur son pc)
 	netstat 
 
-## NMAP
+### NMAP
 
 #### Permet de résoudre les problèmes sur de grands réseaux lorsque plusieurs chemins permettent d'atteindre le même point ou lorsque plusieurs composants intermédiaires (routeurs ou ponts) sont impliqués
+
 #### L'utilitaire de diagnostic TRACERT détermine l'itinéraire vers une destination en envoyant des paquets d'écho ICMP (Internet Control Message Protocol) à la destination.
-
-
-
-##   in progress...
-
 
 
 ### Modèle OSI
 
 #### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco.
+
+##   in progress...
+
 
 
 
