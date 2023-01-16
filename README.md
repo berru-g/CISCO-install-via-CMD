@@ -84,7 +84,6 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
  - Tester un réseaux sur plusieurs machines virtuel et vérifier leurs connexion via ping.
 
 ### Ping
-#### Désactiver le pare-feu sur la machine qui réceptionne le ping
 | net id | host id |
 |--|--|
 |192.168.1.  |  44  |
@@ -109,14 +108,36 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
     netsh interface ipv4 set address name=6 dhcp
 
 
+###  Voir ses ID et son réseaux
+	ipconfig
 
-#  Reprise Janvier
+### Voir les IP sur son wifi
+	arp -a
+
+### Envoie un mess sur un PC de son réseaux
+	msg */server:192.168.1.19 tu_recoit_ce_message
+
+##### Server adress
+	nslookup
+
+##### Permet tout d'abord de connaître l'état des ports et des connexions sur votre machine. (fermer tte fenetre sur son pc)
+	netstat 
+
+## NMAP
+
+#### Permet de résoudre les problèmes sur de grands réseaux lorsque plusieurs chemins permettent d'atteindre le même point ou lorsque plusieurs composants intermédiaires (routeurs ou ponts) sont impliqués
+#### L'utilitaire de diagnostic TRACERT détermine l'itinéraire vers une destination en envoyant des paquets d'écho ICMP (Internet Control Message Protocol) à la destination.
+
+
+
+##   in progress...
 
 
 
 ### Modèle OSI
 
-#### BASE DU FONCTIONNEMENT D'UN RESEAUX
+#### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco.
+
 
 
 
