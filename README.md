@@ -122,7 +122,7 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
 #### Server adress
 	nslookup
 
-#### Permet tout d'abord de connaître l'état des ports et des connexions sur votre machine. (fermer tte fenetre sur son pc)
+#### Permet tout d'abord de connaître l'état des ports et des connexions sur votre machine. (fermer tte fenêtre sur son pc)
 	netstat 
 
 ### USE NMAP & WIRESHARK
@@ -292,11 +292,15 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 7.  Configurer les paramètres réseau pour la machine virtuelle pour qu'elle puisse accéder à Internet et aux autres ordinateurs sur votre réseau.
 8.  Configurez les services et les applications nécessaires pour votre serveur.
 
-**Il est fortement recommandé d'utiliser "sysprep" si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future.**
+**Il est fortement recommandé d'utiliser "sysprep" en étape 9, si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future comme un clone.**
+
+#### Vérification de la bonne installation, via cmd:
+	
+	netdom computername %COMPUTERNAME /enumerate
+	netsh interface
 
 
 
  
-
 
 
