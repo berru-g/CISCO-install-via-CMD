@@ -292,18 +292,22 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 9. VM tool --> installation puis Double click sur le dvd drive: dans ce PC!
 
 
-**Il est fortement recommandé d'utiliser "sysprep" en étape 10, si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future comme un clone.**
+> **Il est fortement recommandé d'utiliser "sysprep" en étape 10, si vous prévoyez de dupliquer ou de capturer l'image de votre serveur
+> Windows pour une utilisation future comme un clone.**
 
 #### Vérification de la bonne installation, via cmd:
 	
-	netdom computername %COMPUTERNAME /enumerate
-	netsh interface
+	hostname
+	netdom computername %COMPUTERNAME% /Enumerate
+	ipconfig /all
+	netsh interface ipv4 show config 6
+	
 
 #### Actualiser le DNS:
 
 	ipconfig /registerdns
 
-
+### FIN DE LA CONFIG
  
 
 
