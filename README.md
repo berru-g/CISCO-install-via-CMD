@@ -1,3 +1,4 @@
+
 ## Commandes de base utiles :
 
 ### Sous Win, Linux donc powershell:
@@ -132,28 +133,70 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
 
 ### Modèle OSI
 
-#### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco. (voirpdf oyokai)
+#### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco. (voir pdf oyokai)
 
 
 ##  DNS
 
-#### protocole permettant les échanges avec autorisation
+#### Le protocole DNS (Domain Name System) 
+
+Est utilisé pour convertir les noms de domaines en adresses IP. Il permet aux ordinateurs de trouver des sites web en utilisant des noms de domaines plutôt que des adresses IP numériques. STP (Spanning Tree Protocol) est un protocole de réseau qui empêche les boucles de se produire dans les réseaux étendus en créant un arbre qui couvre tous les éléments du réseau et en éliminant les liaisons en double. Il est utilisé pour éviter les boucles dans les réseaux Ethernet étendus en sélectionnant un chemin unique pour les données à suivre.
 
 	Changer le fichier "host" = enlever les autorisations dans ce fichier host. 
 
-#### C:\WINDOWS\system32\drivers\etc\hosts
+##### C:\WINDOWS\system32\drivers\etc\hosts
+
+### ICANN - Société pour l'attribution des noms de domaine.
+
+	TLD = (Top-level domain)
+	
+Les TDL sont les derniers niveaux d'un nom de domaine, comme .com, .org, .edu, etc. Ils indiquent le type d'entité ou l'utilisation du domaine. Par exemple, les noms de domaine avec un TDL .com sont généralement utilisés pour les entreprises commerciales, tandis que les noms de domaine avec un TDL .edu sont réservés aux établissements d'enseignement.
+
+La racine d'un nom de domaine est la partie la plus haute de l'arbre de nom de domaine. Il contient les TDL et les serveurs de nom racine qui sont responsables de l'enregistrement des noms de domaine et de la résolution des noms de domaine en adresses IP. Les serveurs de noms racine sont gérés par l'Internet Corporation for Assigned Names and Numbers (ICANN).
 
 
+### Root (meme schéma avec chaque tdl)
+									
+                          .com
+                        /    |   \
+                    example  google  facebook
+                      |
+                 L2 - www.example.com
+                      |
+                 L3 - mail.example.com
+                      |
+                 L4 - support.mail.example.com
 
 
+**  Ce schéma montre comment les noms de domaine peuvent être organisés en utilisant des niveaux de sous-domaine. Le niveau L2 (www) est ajouté pour créer un sous-domaine spécifique pour les pages web d'un site. Le niveau L3 (mail) est ajouté pour créer un sous-domaine pour les courriels. Enfin, Le niveau L4 (support) est ajouté pour créer un sous-domaine pour les pages d'aide ou de support. **
+
+*Il est important de noter que les niveaux L2, L3, et L4 sont crées par les propriétaires de domaines et n'ont pas de regles strictes. Il est possible de les utiliser à sa guise en fonction de son besoin.*
+
+### protocole
+
+                                Client
+                                   |
+                                   | Requête DNS pour "example.com"
+                                   |
+                                   V
+                            +--------------+
+                            |   Serveur DNS |
+                            +--------------+
+                                   |
+                                   | Recherche de l'enregistrement A correspondant à "example.com"
+                                   |
+                                   V
+                            +--------------+
+                            |    TLD Server |
+                            +--------------+
+                                   |
+                                   | Renvoi de l'adresse IP correspondante à "example.com"
+                                   |
+                                   V
+                                Client
 
 
+* Ce schéma montre comment un client envoie une requête DNS pour un nom de domaine spécifique (example.com) à un serveur DNS local. Le serveur DNS local recherche l'enregistrement A (adresse IP) correspondant à ce nom de domaine dans sa propre base de données ou en demandant à un serveur DNS de niveau supérieur (TLD Server) qui contient l'enregistrement A correspondant pour ce nom de domaine. Enfin, le serveur DNS de niveau supérieur renvoie l'adresse IP correspondante au client.
 
-
-
-
-
-
-
-
+Il est important de noter que les requêtes DNS peuvent également être gérées par des serveurs de cache, qui mémorisent les réponses DNS récemment demandées pour accélérer les requêtes futures. *
 
