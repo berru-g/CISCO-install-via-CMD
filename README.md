@@ -281,7 +281,22 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 
 
 
+#### Configuration d'un DNS main with VMware: 
+
+1.  Téléchargez et installez VMware Workstation sur votre ordinateur.
+2.  Lancez VMware Workstation et cliquez sur le bouton "Créer un nouveau" pour lancer l'assistant de création de machine virtuelle.
+3.  Sélectionnez "Windows" comme système d'exploitation et la version appropriée (par exemple, Windows Server 2019)
+4.  Spécifiez les paramètres de configuration de la machine virtuelle, tels que la quantité de mémoire vive et d'espace disque allouée.
+5.  Insérez le disque d'installation de Windows Server dans le lecteur de CD/DVD de votre ordinateur ou utilisez un fichier ISO téléchargé.
+6.  Suivez les instructions de l'assistant d'installation pour installer Windows Server sur la machine virtuelle.
+7.  Configurer les paramètres réseau pour la machine virtuelle pour qu'elle puisse accéder à Internet et aux autres ordinateurs sur votre réseau.
+8.  Configurez les services et les applications nécessaires pour votre serveur.
+
+**Il est fortement recommandé d'utiliser "sysprep" si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future.**
+
+
 
  
+
 
 
