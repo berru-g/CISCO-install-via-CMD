@@ -132,9 +132,16 @@ Si vous rencontrez des problèmes lors de l'installation, vous pouvez consulter 
 
 ### Modèle OSI
 
-#### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco.
+#### BASE DU FONCTIONNEMENT D'UN [RÉSEAUX](https://github.com/berru-g/HDF-note/tree/main/Cisco) avec le soft Cisco. (voirpdf oyokai)
 
-##   in progress...
+
+##  DNS
+
+#### protocole permettant les échanges avec autorisation
+
+	Changer le fichier "host" = enlever les autorisations dans ce fichier host. 
+
+#### C:\WINDOWS\system32\drivers\etc\hosts
 
 
 
