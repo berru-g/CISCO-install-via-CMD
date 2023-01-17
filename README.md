@@ -1,5 +1,3 @@
-*note de formation, enrichie par openai*
-
 ## Commandes de base utiles :
 
 ### Sous Win, Linux donc powershell:
@@ -301,6 +299,9 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 	netdom computername %COMPUTERNAME /enumerate
 	netsh interface
 
+#### Actualiser le DNS:
+
+	ipconfig /registerdns
 
 
  
