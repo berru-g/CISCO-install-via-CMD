@@ -291,8 +291,10 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 6.  Suivez les instructions de l'assistant d'installation pour installer Windows Server sur la machine virtuelle.
 7.  Configurer les paramètres réseau pour la machine virtuelle pour qu'elle puisse accéder à Internet et aux autres ordinateurs sur votre réseau.
 8.  Configurez les services et les applications nécessaires pour votre serveur.
+9. VM tool --> installation puis Double click sur le dvd drive: dans ce PC!
 
-**Il est fortement recommandé d'utiliser "sysprep" en étape 9, si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future comme un clone.**
+
+**Il est fortement recommandé d'utiliser "sysprep" en étape 10, si vous prévoyez de dupliquer ou de capturer l'image de votre serveur Windows pour une utilisation future comme un clone.**
 
 #### Vérification de la bonne installation, via cmd:
 	
