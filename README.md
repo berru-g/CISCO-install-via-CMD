@@ -1,3 +1,4 @@
+
 ## Commandes de base utiles :
 
 ### Sous Win, Linux donc powershell:
@@ -312,25 +313,46 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 ![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
 
 
-### Création d'un server sous vmware via CMD uniquement en ligne de com
+## Création d'un server sous vmware uniquement en ligne de com
 
-#vmrun -T ws create [chemin_du_fichier_vmx] [taille_mémoire] [nombre_de_processeurs]
+**1 - vmrun -T ws create [chemin_du_fichier_vmx] [taille_mémoire] [nombre_de_processeurs]**
+
 	vmrun -T ws create "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" 2048 2
 
-Ajoutez un disque dur à la machine virtuelle en utilisant la commande vmrun :
+**2 - Ajoutez un disque dur à la machine virtuelle en utilisant la commande vmrun :**
 
-#vmrun -T ws addDisk [chemin_du_fichier_vmx] [chemin_du_fichier_vmdk] [taille_du_disque]
+*vmrun -T ws addDisk [chemin_du_fichier_vmx] [chemin_du_fichier_vmdk] [taille_du_disque]*
 
 	
 	vmrun -T ws addDisk "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" "C:\Users\Username\Virtual Machines\Windows Server 2019_1.vmdk" 100G
 
-Ajoutez un réseau à la machine virtuelle en utilisant la commande vmrun :
-#vmrun -T ws addNetworkAdapter [chemin_du_fichier_vmx] [type_de_carte_réseau]
+**3 - Ajoutez un réseau à la machine virtuelle en utilisant la commande vmrun :**
+*vmrun -T ws addNetworkAdapter [chemin_du_fichier_vmx] [type_de_carte_réseau]*
 
 	
 	vmrun -T ws addNetworkAdapter "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" bridged
 
->Gardez à l'esprit que ces commandes sont générales et peuvent varier en fonction de votre >configuration spécifique. Il est recommandé de consulter la documentation de VMware pour >obtenir des instructions détaillées sur l'utilisation des commandes appropriées.
+**4 -  Utilisez la commande `vmrun` pour démarrer la machine virtuelle :**
+
+`vmrun -T ws start [chemin_du_fichier_vmx]` 
+
+*Exemple:*
+
+`vmrun -T ws start "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx"` 
+
+**5 -  Connectez-vous à la machine virtuelle en utilisant un client de bureau distant (par exemple RDP) ou en utilisant la ligne de commande pour configurer les paramètres de serveur appropriés.**
+    
+**6 -  Utilisez les commandes appropriées pour installer les logiciels de serveur nécessaires (comme un système d'exploitation, un service web, un service de base de données, etc.)**
+    
+
+> Il est important de noter que pour utiliser ces commandes vous devez
+> avoir les droits d'administrateur sur votre machine. Il est également
+> recommandé de tester ces commandes dans un environnement de test avant
+> de les utiliser sur un environnement de production.
+> 
+>>Gardez à l'esprit que ces commandes sont générales et peuvent varier en fonction de votre 
+>>configuration spécifique. Il est recommandé de consulter la documentation de VMware pour 
+>>obtenir des instructions détaillées sur l'utilisation des commandes appropriées.
 
 ## DHCP
 
@@ -357,6 +379,8 @@ Source Dest Source Dest Packet
 ```
 
 ![dhcp](https://user-images.githubusercontent.com/61543927/213132203-91c6145e-89f2-47af-9190-8417def94e19.png)
+
+
 
 
 
