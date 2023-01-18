@@ -313,60 +313,28 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 ![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
 
 
-## Création d'un server sous vmware uniquement en ligne de com pour VMware vSphere CLI ou VMware vSphere PowerCLI, qui sont des outils de ligne de commande pour la gestion de machines virtuelles VMware vSphere, qui est une plateforme de virtualisation pour les environnements de serveurs d'entreprise. Ces outils ne sont pas compatibles avec VMware Workstation qui est une solution de virtualisation pour les environnements de bureau individuels.
+## Création d'une VM sous vmware via l'invité de cmd:
 
-**1 - vmrun -T ws create [chemin_du_fichier_vmx] [taille_mémoire] [nombre_de_processeurs]**
+	@echo off
+	rem Set variables for the new virtual machine
+	set vmname="MyServer"
+	set vmdisk="C:\VirtualMachines\MyServer.vmdk"
+	set vmos="windows9"
+	set vmpath="C:\VirtualMachines"
+	set vmmem="1024"
+	set vmcpus="1"
 
-	vmrun -T ws create "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" 2048 2
+	rem Create the new virtual machine
+	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -c -T ws -q -s 	create "%vmpath%\%vmname%" -a "%vmos%" -m %vmmem% -d "%vmdisk%" -c %vmcpus%
 
-**2 - Ajoutez un disque dur à la machine virtuelle en utilisant la commande vmrun :**
+	rem Start the new virtual machine
+	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -X "%vmpath%\%vmname%"
 
-*vmrun -T ws addDisk [chemin_du_fichier_vmx] [chemin_du_fichier_vmdk] [taille_du_disque]*
+Ce script utilise la ligne de commande vmware.exe pour créer une nouvelle machine virtuelle nommée "MyServer" dans le répertoire "C:\VirtualMachines" avec un disque dur de "C:\VirtualMachines\MyServer.vmdk" et un système d'exploitation "Windows 9" et alloue 1 Go de mémoire et 1 CPU.
 
-	
-	vmrun -T ws addDisk "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" "C:\Users\Username\Virtual Machines\Windows Server 2019_1.vmdk" 100G
+Il est important de noter que le script ci-dessus est un exemple général et peut nécessiter des modifications pour s'adapter à votre environnement spécifique, il est donc conseillé de consulter la documentation de VMware pour obtenir des informations détaillées sur les options de ligne de commande disponibles.
 
-**3 - Ajoutez un réseau à la machine virtuelle en utilisant la commande vmrun :**
-*vmrun -T ws addNetworkAdapter [chemin_du_fichier_vmx] [type_de_carte_réseau]*
-
-	
-	vmrun -T ws addNetworkAdapter "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" bridged
-
-**4 -  Utilisez la commande `vmrun` pour démarrer la machine virtuelle :**
-
-`vmrun -T ws start [chemin_du_fichier_vmx]` 
-
-*Exemple:*
-
-`vmrun -T ws start "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx"` 
-
-**5 -  Connectez-vous à la machine virtuelle en utilisant un client de bureau distant (par exemple RDP) ou en utilisant la ligne de commande pour configurer les paramètres de serveur appropriés.**
-    
-**6 -  Utilisez les commandes appropriées pour installer les logiciels de serveur nécessaires (comme un système d'exploitation, un service web, un service de base de données, etc.)**
-    
-Pour créer une nouvelle machine virtuelle avec VMware Workstation en utilisant la ligne de commande, vous pouvez utiliser des commandes comme vmware-vdiskmanager ou vmware-cmd. Ces commandes sont utilisées pour créer, supprimer, et gérer des disques durs virtuels, et démarrer et arrêter des machines virtuelles.
-
-#### Voici un exemple de commande pour créer un disque dur virtuel avec vmware-vdiskmanager
-
-	vmware-vdiskmanager -c -s 100GB -a lsilogic -t 0 "C:\Users\Username\Virtual Machines\Windows Server 2019.vmdk"
-
-Et pour démarrer une machine virtuelle :
-
-	vmware-cmd "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" start
-
-> Il est important de noter que ces commandes peuvent varier en fonction de votre système 
-> d'exploitation et de la version de VMware Workstation que vous utilisez. 
-
-> Il est important de noter que pour utiliser ces commandes vous devez
-> avoir les droits d'administrateur sur votre machine. Il est également
-> recommandé de tester ces commandes dans un environnement de test avant
-> de les utiliser sur un environnement de production.
-> 
->>Gardez à l'esprit que ces commandes sont générales et peuvent varier en fonction de votre 
->>configuration spécifique. Il est recommandé de consulter la documentation de VMware pour 
->>obtenir des instructions détaillées sur l'utilisation des commandes appropriées.
-
-## DHCP
+## Server DHCP
 
 Le protocole DHCP (Dynamic Host Configuration Protocol) est un protocole standard défini par RFC 1541 (qui est remplacé par RFC 2131) qui permet à un serveur de distribuer dynamiquement les informations d’adressage IP et de configuration aux clients. Normalement, le serveur DHCP fournit au client au moins les informations de base suivantes :
 
