@@ -313,7 +313,7 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 ![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
 
 
-## Création d'un server sous vmware uniquement en ligne de com
+## Création d'un server sous vmware uniquement en ligne de com pour VMware vSphere CLI ou VMware vSphere PowerCLI, qui sont des outils de ligne de commande pour la gestion de machines virtuelles VMware vSphere, qui est une plateforme de virtualisation pour les environnements de serveurs d'entreprise. Ces outils ne sont pas compatibles avec VMware Workstation qui est une solution de virtualisation pour les environnements de bureau individuels.
 
 **1 - vmrun -T ws create [chemin_du_fichier_vmx] [taille_mémoire] [nombre_de_processeurs]**
 
@@ -344,6 +344,18 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
     
 **6 -  Utilisez les commandes appropriées pour installer les logiciels de serveur nécessaires (comme un système d'exploitation, un service web, un service de base de données, etc.)**
     
+Pour créer une nouvelle machine virtuelle avec VMware Workstation en utilisant la ligne de commande, vous pouvez utiliser des commandes comme vmware-vdiskmanager ou vmware-cmd. Ces commandes sont utilisées pour créer, supprimer, et gérer des disques durs virtuels, et démarrer et arrêter des machines virtuelles.
+
+#### Voici un exemple de commande pour créer un disque dur virtuel avec vmware-vdiskmanager
+
+	vmware-vdiskmanager -c -s 100GB -a lsilogic -t 0 "C:\Users\Username\Virtual Machines\Windows Server 2019.vmdk"
+
+Et pour démarrer une machine virtuelle :
+
+	vmware-cmd "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" start
+
+> Il est important de noter que ces commandes peuvent varier en fonction de votre système 
+> d'exploitation et de la version de VMware Workstation que vous utilisez. 
 
 > Il est important de noter que pour utiliser ces commandes vous devez
 > avoir les droits d'administrateur sur votre machine. Il est également
