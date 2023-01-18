@@ -229,7 +229,7 @@ UDP, d'autre part, est un protocole de transmission de données non fiable qui n
 
 **En résumé, TCP est utilisé pour les applications qui nécessitent une transmission fiable des données, tandis que UDP est utilisé pour les applications qui nécessitent une transmission rapide des données, même si cela signifie que certaines données peuvent être perdues.**
 
-## Records resourcing
+### Records resourcing
 
 Les enregistrements de ressources définissent les types de données du système DNS. Les enregistrements de ressources ciblés par RFC 1035 sont stockés en format binaire à l’interne pour une utilisation par le logiciel DNS. [![icon_popup_short.gif](https://www.cisco.com/swa/i/icon_popup_short.gif)](https://www.cisco.com/swa/i/icon_popup_short.gif "icon_popup_short.gif") Ces enregistrements sont toutefois acheminés en format texte sur un réseau pendant qu’ils effectuent des transferts de zone. Ce document aborde certains types d’enregistrements de ressources parmi les plus importants.
 
@@ -279,7 +279,7 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 
 
 
-#### Configuration d'un DNS main with VMware: 
+## Configuration d'un DNS main with VMware: 
 
 1.  Téléchargez et installez VMware Workstation sur votre ordinateur.
 2.  Lancez VMware Workstation et cliquez sur le bouton "Créer un nouveau" pour lancer l'assistant de création de machine virtuelle.
@@ -311,6 +311,26 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 
 ![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
 
+
+### Création d'un server sous vmware via CMD uniquement en ligne de com
+
+#vmrun -T ws create [chemin_du_fichier_vmx] [taille_mémoire] [nombre_de_processeurs]
+	vmrun -T ws create "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" 2048 2
+
+Ajoutez un disque dur à la machine virtuelle en utilisant la commande vmrun :
+
+#vmrun -T ws addDisk [chemin_du_fichier_vmx] [chemin_du_fichier_vmdk] [taille_du_disque]
+
+	
+	vmrun -T ws addDisk "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" "C:\Users\Username\Virtual Machines\Windows Server 2019_1.vmdk" 100G
+
+Ajoutez un réseau à la machine virtuelle en utilisant la commande vmrun :
+#vmrun -T ws addNetworkAdapter [chemin_du_fichier_vmx] [type_de_carte_réseau]
+
+	
+	vmrun -T ws addNetworkAdapter "C:\Users\Username\Virtual Machines\Windows Server 2019.vmx" bridged
+
+>Gardez à l'esprit que ces commandes sont générales et peuvent varier en fonction de votre >configuration spécifique. Il est recommandé de consulter la documentation de VMware pour >obtenir des instructions détaillées sur l'utilisation des commandes appropriées.
 
 ## DHCP
 
