@@ -313,22 +313,25 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 ![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
 
 
-## Création d'une VM sous vmware via l'invité de cmd:
+## Création d'une VM server sous vmware via l'invité de cmd:
+**commande -c non reconnu par Win**
 
 	@echo off
+
 	rem Set variables for the new virtual machine
 	set vmname="MyServer"
 	set vmdisk="C:\VirtualMachines\MyServer.vmdk"
-	set vmos="windows9"
-	set vmpath="C:\VirtualMachines"
+	set vmos="windows10"
+	set vmpath="C:\VirtualMachines\%vmname%.vmx"
 	set vmmem="1024"
 	set vmcpus="1"
 
 	rem Create the new virtual machine
-	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -c -T ws -q -s 	create "%vmpath%\%vmname%" -a "%vmos%" -m %vmmem% -d "%vmdisk%" -c %vmcpus%
+	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -T ws -q -s create "%vmpath%" -a "%vmos%" -m %vmmem% -d "%vmdisk%" -c %vmcpus%
 
 	rem Start the new virtual machine
-	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -X "%vmpath%\%vmname%"
+	"C:\Program Files (x86)\VMware\VMware Workstation\vmware.exe" -X "%vmpath%"
+
 
 Ce script utilise la ligne de commande vmware.exe pour créer une nouvelle machine virtuelle nommée "MyServer" dans le répertoire "C:\VirtualMachines" avec un disque dur de "C:\VirtualMachines\MyServer.vmdk" et un système d'exploitation "Windows 9" et alloue 1 Go de mémoire et 1 CPU.
 
