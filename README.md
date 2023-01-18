@@ -337,6 +337,27 @@ Ce script utilise la ligne de commande vmware.exe pour créer une nouvelle machi
 
 Il est important de noter que le script ci-dessus est un exemple général et peut nécessiter des modifications pour s'adapter à votre environnement spécifique, il est donc conseillé de consulter la documentation de VMware pour obtenir des informations détaillées sur les options de ligne de commande disponibles.
 
+**meme script pour powershell" avec installation de VMware vSphere PowerCLI.
+
+	#Set variables for the new virtual machine
+	$vmname = "MyServer"
+	$vmdisk = "C:\VirtualMachines\MyServer.vmdk"
+	$vmos = "Windows9"
+	$vmmem = "1024"
+	$vmcpus = "1"
+	
+#Connect to VMware Workstation
+	Connect-VIServer localhost
+	
+#Create the new virtual machine
+	New-VM -Name $vmname -DiskPath $vmdisk -OSCustomizationSpec $vmos -MemoryMB $vmmem -NumCpu $vmcpus
+
+#Start the new virtual machine
+	Start-VM -VM $vmname
+
+
+
+
 ## Server DHCP
 
 Le protocole DHCP (Dynamic Host Configuration Protocol) est un protocole standard défini par RFC 1541 (qui est remplacé par RFC 2131) qui permet à un serveur de distribuer dynamiquement les informations d’adressage IP et de configuration aux clients. Normalement, le serveur DHCP fournit au client au moins les informations de base suivantes :
