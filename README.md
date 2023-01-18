@@ -260,7 +260,7 @@ Le format de cet enregistrement est affiché dans cette sortie. La valeur indiqu
 
 
 
-#### Sécuriser un DNS.
+### Sécuriser un DNS.
 
 Il existe plusieurs moyens de sécuriser un service DNS (Domain Name System), voici quelques-unes des principales méthodes :
 
@@ -307,7 +307,15 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 
 	ipconfig /registerdns
 
-### FIN DE LA CONFIG
- 
+#### Voici le résultat,
+
+![lan](https://user-images.githubusercontent.com/61543927/213127286-05a51bd0-303a-43ea-a347-0ae8baa60f52.png)
+
+
+## DHCP
+
+
+
+
 
 
