@@ -314,6 +314,32 @@ Il est important de noter que la sécurité ne repose pas sur une seule techniqu
 
 ## DHCP
 
+Le protocole DHCP (Dynamic Host Configuration Protocol) est un protocole standard défini par RFC 1541 (qui est remplacé par RFC 2131) qui permet à un serveur de distribuer dynamiquement les informations d’adressage IP et de configuration aux clients. Normalement, le serveur DHCP fournit au client au moins les informations de base suivantes :
+
+	 - Adresse IP
+   
+	 -   Masque de sous-réseau
+   
+	 -   les informations de GatewayOther par défaut peuvent également être fournies, telles que les adresses de serveur DNS (domain name service) et les adresses de serveur Windows WINS (Internet name service). L’administrateur système configure le serveur DHCP avec les options qui sont analysées par le client.
+
+Lorsqu’un client est initialisé pour la première fois après avoir été configuré pour recevoir des informations DHCP, il entame une conversation avec le serveur.
+
+Voici une table de résumé de la conversation entre le client et le serveur, qui est suivie d’une description au niveau du paquet du processus :
+
+```
+Source Dest Source Dest Packet
+ MAC addr MAC addr IP addr IP addr Description
+ -----------------------------------------------------------------
+ Client Broadcast 0.0.0.0 255.255.255.255 DHCP Discover
+ DHCPsrvr Broadcast DHCPsrvr 255.255.255.255 DHCP Offer
+ Client Broadcast 0.0.0.0 255.255.255.255 DHCP Request
+ DHCPsrvr Broadcast DHCPsrvr 255.255.255.255 DHCP ACK
+```
+
+![dhcp](https://user-images.githubusercontent.com/61543927/213132203-91c6145e-89f2-47af-9190-8417def94e19.png)
+
+
+
 
 
 
